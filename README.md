@@ -12,4 +12,4 @@ webpack+react-rounter+react+es6
 - 项目的node_modules包需要使用npm install安装，会自动加载package.json中的依赖 
 # 项目运行：
 - 先npm install 加载package.json中的依赖
-- npm start 运行package.json中写好的script脚本，使用webpack-dev-server在8000端口其的服务 
+- npm start 运行package.json中写好的script脚本，使用webpack-dev-server在8080端口起的服务 
