@@ -1,10 +1,6 @@
 # ReactProject
 webpack+react-rounter+react+es6
 
-# index
-[项目说明](# 关于路由)
-
-
 # 项目说明：
 - 根目录下的index.js是项目的入口文件
 - 会在根目录下生成一个bundle.js文件
