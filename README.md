@@ -17,6 +17,7 @@ webpack+react-rounter+react+es6
 - 如果在routeMap文件夹下的routes.js路由组件中使用react-router的hashHistory路由方式，就会在url通过Hash进行路由跳转
 - 如果在routeMap文件夹下的routes.js路由组件中使用react-router的browserHistory路由方式，需要在package.json的script脚本的webpack-dev-server后面加入加入如下命令参数：
 
+坑，坑，坑：注意写脚本的时候不要多谢空格和-,否则会报错，坑了我一上午才看出来多了一个空格。。。。
 ~~~
    --history-api-fallback
 ~~~
