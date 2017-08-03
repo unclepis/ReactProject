@@ -13,3 +13,12 @@ webpack+react-rounter+react+es6
 # 项目运行：
 - 先npm install 加载package.json中的依赖
 - npm start 运行package.json中写好的script脚本，使用webpack-dev-server在8080端口起的服务 
+# 关于路由
+- 如果在routeMap文件夹下的routes.js路由组件中使用react-router的hashHistory路由方式，就会在url通过Hash进行路由跳转
+- 如果在routeMap文件夹下的routes.js路由组件中使用react-router的browserHistory路由方式，需要在package.json的script脚本的webpack-dev-server后面加入加入如下命令参数：
+
+~~~
+   --history-api-fallback
+~~~
+
+或者浏览器的History API路由browserHistory需要在服务器端进行改造，否则当用户请求服务器的某个子路由会报404找不到网页错误
