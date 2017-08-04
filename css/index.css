@@ -16,5 +16,8 @@ a:hover{
     color:green;
 }
 :global(.nav){
-    color:red;
+    color:red; /*全局变量*/
+}
+.nav{
+    color:yellow;  /*局部变量*/
 }
