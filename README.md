@@ -17,12 +17,10 @@ webpack+react-rounter+react+es6
 - 项目的node_modules包需要使用npm install安装，会自动加载package.json中的依赖 
 # 项目运行：
 - 先npm install 加载package.json中的依赖
-- npm start 运行package.json中写好的script脚本，使用webpack-dev-server在8080端口起的服务 
+- npm start 运行package.json中写好的script脚本，使用webpack-dev-server在3000端口起的服务 
 # 关于路由
 - 如果在routeMap文件夹下的routes.js路由组件中使用react-router的hashHistory路由方式，就会在url通过Hash进行路由跳转
 - 如果在routeMap文件夹下的routes.js路由组件中使用react-router的browserHistory路由方式，需要在package.json的script脚本的webpack-dev-server后面加入加入如下命令参数：
-
-**坑，坑，坑：注意写脚本的时候不要多谢空格和-,否则会报错，坑了我一上午才看出来多了一个空格。。。。**
 ~~~
    --history-api-fallback
 ~~~
