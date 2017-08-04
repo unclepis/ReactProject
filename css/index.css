@@ -19,5 +19,5 @@ a:hover{
     color:red; /*全局变量*/
 }
 .nav{
-    color:yellow;  /*局部变量*/
+    color:blue;  /*局部变量*/
 }
