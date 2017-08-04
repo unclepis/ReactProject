@@ -50,7 +50,7 @@ module.exports = {
     historyApiFallback: true,
     hot: true,
     quite: true,
-    host: '0.0.0.0'
+    host: '0.0.0.0' 
   }
 }
 
