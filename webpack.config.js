@@ -21,7 +21,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loaders: ['style-loader', 'css-loader?modules']
+        loaders: ['style-loader', 'css-loader?modules'] //增加modules就会加载css module，在css文件中就会有全局的global变量和局部变量的区别
       },
       {
         test: /\.scss$/,
