@@ -15,7 +15,7 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.js$/,
+        test: /\.js[x]?$/,
         exclude: /node_modules/,
         loader: 'babel-loader?presets[]=es2015&presets[]=react'
       },
@@ -26,6 +26,10 @@ module.exports = {
       {
         test: /\.scss$/,
         loaders: ['style-loader', 'css-loader?modules', 'sass-loader']
+      },
+      {
+        test:/\.(png|jpg)$/,
+        loader:'url-loader?limit=8192'
       }
     ]
   },
