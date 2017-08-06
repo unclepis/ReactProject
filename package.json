@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --hot --progress --colors --watch --history-api-fallback --inline --content-base --port 3000"
+    "start": "webpack-dev-server --quiet --hot --progress --colors --watch --history-api-fallback --inline --content-base --port 3000"
   },
   "author": "",
   "license": "ISC",

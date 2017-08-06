@@ -9,6 +9,7 @@ const dashboard = new Dashboard();
 module.exports = {
   entry: './index.js',
   output: {
+    path:path.resolve(__dirname,'./'),
     filename: 'bundle.js'
   },
 
@@ -34,6 +35,11 @@ module.exports = {
     ]
   },
   plugins: [
+    // new webpack.optimize.UglifyJsPlugin({ // 压缩bundle.js文件
+    //   compress:{
+    //     warning:false
+    //   }
+    // }),
     new webpack.DefinePlugin({
       "process.env": {
         NODE_ENV: JSON.stringify("production")
@@ -42,10 +48,12 @@ module.exports = {
     new DashboardPlugin(dashboard.setData),
     /*压缩优化代码结束*/
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, './index.html'),
+      title:'webpack-demos', // 设置标题
+      filename:'index.html', // 设置文件名
+      template: path.join(__dirname, './index.html'), // 设置文件的路径
     }),
     new OpenBrowserPlugin({
-      url: 'http://localhost:3000'
+      url: 'http://localhost:3000' // 在指定的3000端口自动打开浏览器
     }),
   ],
   devtool: 'source-map',
