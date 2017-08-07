@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const Dashboard = require('webpack-dashboard');
 const DashboardPlugin = require('webpack-dashboard/plugin');
 const dashboard = new Dashboard();
@@ -9,7 +10,7 @@ const dashboard = new Dashboard();
 module.exports = {
   entry: './index.js',
   output: {
-    path:path.resolve(__dirname,'./'),
+    path: path.resolve(__dirname, './'),
     filename: 'bundle.js'
   },
 
@@ -29,17 +30,19 @@ module.exports = {
         loaders: ['style-loader', 'css-loader?modules', 'sass-loader']
       },
       {
-        test:/\.(png|jpg)$/,
-        loader:'url-loader?limit=8192'
+        test: /\.(png|jpg)$/,
+        loader: 'url-loader?limit=8192'
       }
     ]
   },
   plugins: [
-    // new webpack.optimize.UglifyJsPlugin({ // 压缩bundle.js文件
-    //   compress:{
-    //     warning:false
-    //   }
-    // }),
+    new UglifyJSPlugin({ // 解压bundle.js
+      uglifyOptions: {
+        compress: {
+          warnings: false
+        }
+      }
+    }),
     new webpack.DefinePlugin({
       "process.env": {
         NODE_ENV: JSON.stringify("production")
@@ -48,8 +51,8 @@ module.exports = {
     new DashboardPlugin(dashboard.setData),
     /*压缩优化代码结束*/
     new HtmlWebpackPlugin({
-      title:'webpack-demos', // 设置标题
-      filename:'index.html', // 设置文件名
+      title: 'webpack-demos', // 设置标题
+      filename: 'index.html', // 设置文件名
       template: path.join(__dirname, './index.html'), // 设置文件的路径
     }),
     new OpenBrowserPlugin({
@@ -62,7 +65,7 @@ module.exports = {
     historyApiFallback: true,
     hot: true,
     quite: true,
-    host: '0.0.0.0' 
+    host: '0.0.0.0'
   }
 }
 
