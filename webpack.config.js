@@ -7,7 +7,7 @@ const DashboardPlugin = require('webpack-dashboard/plugin');
 const dashboard = new Dashboard();
 
 module.exports = {
-  entry: './index.js',
+  entry: './index.jsx',
   output: {
     path:path.resolve(__dirname,'./'),
     filename: 'bundle.js'
